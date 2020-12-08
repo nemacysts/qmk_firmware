@@ -16,8 +16,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
-
 #include QMK_KEYBOARD_H
 #include "version.h"
 
@@ -41,6 +39,7 @@ enum layers {
     BASE,  // default layer
 };
 
+// clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE] = LAYOUT_moonlander(
         TILDE_DOLLAR, AMPERSAND_PERCENT, L_BRACKET_7, L_BRACE_5, R_BRACE_3, L_PAREN_1, EQL_9, /* split */ STAR_0, R_PAREN_2, PLUS_4, R_BRACKET_6, BANG_8, POUND_TICK, KC_BSPACE,
@@ -51,13 +50,103 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             KC_SPC,  KC_BSPC, KC_LGUI, /* split */ KC_LALT,  KC_TAB,  KC_ENT
     ),
 };
+// clang-format on
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
+        bool shifted = get_mods() & MOD_MASK_SHIFT;
         switch (keycode) {
-        case 1:
-            SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
-            return false;
+            case TILDE_DOLLAR:
+                if (shifted) {
+                    SEND_STRING("~");
+                } else {
+                    SEND_STRING("$");
+                }
+                break;
+            case AMPERSAND_PERCENT:
+                if (shifted) {
+                    SEND_STRING("&");
+                } else {
+                    SEND_STRING("%");
+                }
+                break;
+            case L_BRACKET_7:
+                if (shifted) {
+                    SEND_STRING("7");
+                } else {
+                    SEND_STRING("[");
+                }
+                break;
+            case L_BRACE_5:
+                if (shifted) {
+                    SEND_STRING("5");
+                } else {
+                    SEND_STRING("{");
+                }
+                break;
+            case R_BRACE_3:
+                if (shifted) {
+                    SEND_STRING("3");
+                } else {
+                    SEND_STRING("}");
+                }
+                break;
+            case L_PAREN_1:
+                if (shifted) {
+                    SEND_STRING("3");
+                } else {
+                    SEND_STRING("(");
+                }
+                break;
+            case EQL_9:
+                if (shifted) {
+                    SEND_STRING("9");
+                } else {
+                    SEND_STRING("=");
+                }
+                break;
+            case STAR_0:
+                if (shifted) {
+                    SEND_STRING("0");
+                } else {
+                    SEND_STRING("*");
+                }
+                break;
+            case R_PAREN_2:
+                if (shifted) {
+                    SEND_STRING("2");
+                } else {
+                    SEND_STRING(")");
+                }
+                break;
+            case PLUS_4:
+                if (shifted) {
+                    SEND_STRING("4");
+                } else {
+                    SEND_STRING("+");
+                }
+                break;
+            case R_BRACKET_6:
+                if (shifted) {
+                    SEND_STRING("6");
+                } else {
+                    SEND_STRING("]");
+                }
+                break;
+            case BANG_8:
+                if (shifted) {
+                    SEND_STRING("8");
+                } else {
+                    SEND_STRING("!");
+                }
+                break;
+            case POUND_TICK:
+                if (shifted) {
+                    SEND_STRING("`");
+                } else {
+                    SEND_STRING("#");
+                }
+                break;
         }
     }
     return true;
