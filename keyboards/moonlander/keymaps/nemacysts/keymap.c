@@ -54,99 +54,126 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
-        bool shifted = get_mods() & MOD_MASK_SHIFT;
+        uint8_t current_mods = get_mods();
+        bool shifted = current_mods & MOD_MASK_SHIFT;
         switch (keycode) {
             case TILDE_DOLLAR:
                 if (shifted) {
+                    clear_mods();
                     SEND_STRING("~");
+                    set_mods(current_mods);
                 } else {
                     SEND_STRING("$");
                 }
-                break;
+                return false;
             case AMPERSAND_PERCENT:
                 if (shifted) {
-                    SEND_STRING("&");
-                } else {
+                    clear_mods();
                     SEND_STRING("%");
+                    set_mods(current_mods);
+                } else {
+                    SEND_STRING("&");
                 }
-                break;
+                return false;
             case L_BRACKET_7:
                 if (shifted) {
+                    clear_mods();
                     SEND_STRING("7");
+                    set_mods(current_mods);
                 } else {
                     SEND_STRING("[");
                 }
-                break;
+                return false;
             case L_BRACE_5:
                 if (shifted) {
+                    clear_mods();
                     SEND_STRING("5");
+                    set_mods(current_mods);
                 } else {
                     SEND_STRING("{");
                 }
-                break;
+                return false;
             case R_BRACE_3:
                 if (shifted) {
+                    clear_mods();
                     SEND_STRING("3");
+                    set_mods(current_mods);
                 } else {
                     SEND_STRING("}");
                 }
-                break;
+                return false;
             case L_PAREN_1:
                 if (shifted) {
+                    clear_mods();
                     SEND_STRING("3");
+                    set_mods(current_mods);
                 } else {
                     SEND_STRING("(");
                 }
-                break;
+                return false;
             case EQL_9:
                 if (shifted) {
+                    clear_mods();
                     SEND_STRING("9");
+                    set_mods(current_mods);
                 } else {
                     SEND_STRING("=");
                 }
-                break;
+                return false;
             case STAR_0:
                 if (shifted) {
+                    clear_mods();
                     SEND_STRING("0");
+                    set_mods(current_mods);
                 } else {
                     SEND_STRING("*");
                 }
-                break;
+                return false;
             case R_PAREN_2:
                 if (shifted) {
+                    clear_mods();
                     SEND_STRING("2");
+                    set_mods(current_mods);
                 } else {
                     SEND_STRING(")");
                 }
-                break;
+                return false;
             case PLUS_4:
                 if (shifted) {
+                    clear_mods();
                     SEND_STRING("4");
+                    set_mods(current_mods);
                 } else {
                     SEND_STRING("+");
                 }
-                break;
+                return false;
             case R_BRACKET_6:
                 if (shifted) {
+                    clear_mods();
                     SEND_STRING("6");
+                    set_mods(current_mods);
                 } else {
                     SEND_STRING("]");
                 }
-                break;
+                return false;
             case BANG_8:
                 if (shifted) {
+                    clear_mods();
                     SEND_STRING("8");
+                    set_mods(current_mods);
                 } else {
                     SEND_STRING("!");
                 }
-                break;
+                return false;
             case POUND_TICK:
                 if (shifted) {
+                    clear_mods();
                     SEND_STRING("`");
+                    set_mods(current_mods);
                 } else {
                     SEND_STRING("#");
                 }
-                break;
+                return false;
         }
     }
     return true;
