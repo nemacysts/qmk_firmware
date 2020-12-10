@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LSFT, LCTL_T(KC_ESC), KC_A, KC_O, KC_E, KC_U, KC_I, /* split */ KC_D, KC_H, KC_T, KC_N, KC_S, KC_MINUS, KC_RSFT,
         KC_LSFT, KC_QUOTE, KC_Q, KC_J, KC_K, KC_X, /* split */ KC_B, KC_M, KC_W, KC_V, KC_Z, KC_RSFT,
         KC_LCTRL, KC_LOPT, KC_LCMD, KC_LEFT, KC_RIGHT, /* thumb */ KC_HYPR, /* split */ KC_MEH, /* thumb */ KC_UP, KC_DOWN, KC_RCMD, KC_ROPT, RGB_TOG,
-                                            KC_SPC,  KC_BSPC, KC_LGUI, /* split */ KC_RALT,  KC_TAB,  KC_ENT
+                                            KC_SPC,  KC_BSPC, KC_LCMD, /* split */ KC_RALT,  KC_TAB,  KC_ENT
     ),
 };
 // clang-format on
