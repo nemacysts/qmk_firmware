@@ -47,8 +47,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB, KC_SCLN, KC_COMM, KC_DOT, KC_P, KC_Y, KC_F, /* split */ KC_G, KC_C, KC_R, KC_L, KC_SLSH, AT_CARET, KC_BSLS,
         KC_LSFT, LCTL_T(KC_ESC), KC_A, KC_O, KC_E, KC_U, KC_I, /* split */ KC_D, KC_H, KC_T, KC_N, KC_S, KC_MINUS, KC_RSFT,
         KC_DEL, KC_QUOTE, KC_Q, KC_J, KC_K, KC_X, /* split */ KC_B, KC_M, KC_W, KC_V, KC_Z, KC_RSFT,
-        RGB_MOD, KC_LOPT, KC_LCMD, KC_LEFT, KC_RIGHT, /* thumb */ KC_HYPR, /* split */ KC_MEH, /* thumb */ KC_UP, KC_DOWN, KC_RCMD, KC_ROPT, RGB_TOG,
-                                            KC_SPC,  KC_BSPC, KC_LCMD, /* split */ KC_RSFT,  KC_TAB,  KC_ENT
+        RGB_MOD, KC_LOPT, KC_LCMD, KC_LEFT, KC_RIGHT, /* thumb */ KC_HYPR, /* split */ KC_MEH, /* thumb */ KC_UP, KC_DOWN, KC_ROPT, KC_RCMD, RGB_TOG,
+                                            KC_BSPC,  KC_SPC, KC_LCMD, /* split */ KC_RSFT,  KC_ENT,  KC_TAB
     ),
 };
 // clang-format on
