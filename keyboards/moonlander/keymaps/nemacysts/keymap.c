@@ -106,7 +106,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case L_PAREN_1:
                 if (shifted) {
                     clear_mods();
-                    SEND_STRING("3");
+                    SEND_STRING("1");
                     set_mods(current_mods);
                 } else {
                     SEND_STRING("(");
