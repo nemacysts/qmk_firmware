@@ -44,7 +44,7 @@ enum layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE] = LAYOUT_moonlander(
         TILDE_DOLLAR, AMPERSAND_PERCENT, L_BRACKET_7, L_BRACE_5, R_BRACE_3, L_PAREN_1, EQL_9, /* split */ STAR_0, R_PAREN_2, PLUS_4, R_BRACKET_6, BANG_8, POUND_TICK, KC_BSPACE,
-        KC_TAB, KC_SCLN, KC_COMM, KC_DOT, KC_P, KC_Y, KC_F, /* split */ KC_G, KC_C, KC_R, KC_L, KC_SLSH, AT_CARET, KC_BSLS,
+        KC_TAB, KC_BSLS, KC_SCLN, KC_COMM, KC_DOT, KC_P, KC_Y,  /* split */ KC_F, KC_G, KC_C, KC_R, KC_L, KC_SLSH, AT_CARET,
         KC_LSFT, LCTL_T(KC_ESC), KC_A, KC_O, KC_E, KC_U, KC_I, /* split */ KC_D, KC_H, KC_T, KC_N, KC_S, KC_MINUS, KC_RSFT,
         KC_DEL, KC_QUOTE, KC_Q, KC_J, KC_K, KC_X, /* split */ KC_B, KC_M, KC_W, KC_V, KC_Z, KC_RSFT,
         RGB_MOD, KC_LOPT, KC_LCMD, KC_LEFT, KC_RIGHT, /* thumb */ KC_HYPR, /* split */ KC_MEH, /* thumb */ KC_UP, KC_DOWN, KC_ROPT, KC_RCMD, RGB_TOG,
